@@ -1,0 +1,7 @@
+import rest.api.example.auth.UserRole
+
+model {
+	UserRole userRole
+}
+
+json tmpl.userRole(userRole)

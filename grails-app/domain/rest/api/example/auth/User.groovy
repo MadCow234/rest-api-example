@@ -1,4 +1,4 @@
-package rest.api.example
+package rest.api.example.auth
 
 import groovy.transform.EqualsAndHashCode
 import groovy.transform.ToString

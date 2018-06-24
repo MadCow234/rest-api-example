@@ -1,0 +1,7 @@
+import rest.api.example.auth.Role
+
+model {
+	Role role
+}
+
+json g.render(role, [resolveTemplate: false])

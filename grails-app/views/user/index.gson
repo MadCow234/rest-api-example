@@ -1,0 +1,8 @@
+import rest.api.example.auth.User
+
+model {
+	Iterable<User> userList
+}
+
+json tmpl.user(userList ?: [])
+

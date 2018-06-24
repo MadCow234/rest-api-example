@@ -1,4 +1,4 @@
-package rest.api.example
+package rest.api.example.auth
 
 import grails.plugin.springsecurity.SpringSecurityService
 import org.grails.datastore.mapping.engine.event.AbstractPersistenceEvent
@@ -7,6 +7,7 @@ import org.grails.datastore.mapping.engine.event.PreUpdateEvent
 import org.springframework.beans.factory.annotation.Autowired
 import grails.events.annotation.gorm.Listener
 import groovy.transform.CompileStatic
+import rest.api.example.auth.User
 
 @CompileStatic
 class UserPasswordEncoderListener {

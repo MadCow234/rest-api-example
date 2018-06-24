@@ -1,4 +1,4 @@
-package rest.api.example
+package rest.api.example.auth
 
 import grails.gorm.DetachedCriteria
 import groovy.transform.ToString
