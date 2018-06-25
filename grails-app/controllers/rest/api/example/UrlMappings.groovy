@@ -4,6 +4,9 @@ class UrlMappings {
 
     static mappings = {
 
+        // Unauthenticated routes
+        post "/register(.$format)?" (controller: "registration", action: "registerNewUser")
+
         // Authenticated routes
         group "/api", {
 
@@ -14,6 +17,7 @@ class UrlMappings {
             put "/$controller/$id(.$format)?"(action: "update")
             patch "/$controller/$id(.$format)?"(action: "patch")
         }
+
 
         "/"(controller: 'application', action:'index')
         "500"(view: '/error')

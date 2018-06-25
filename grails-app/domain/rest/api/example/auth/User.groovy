@@ -3,8 +3,6 @@ package rest.api.example.auth
 import groovy.transform.EqualsAndHashCode
 import groovy.transform.ToString
 import grails.compiler.GrailsCompileStatic
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.security.crypto.password.PasswordEncoder;
 
 @GrailsCompileStatic
 @EqualsAndHashCode(includes='username')
@@ -25,17 +23,11 @@ class User implements Serializable {
     }
 
     static constraints = {
-        password nullable: false, blank: false, password: true
-        username nullable: false, blank: false, unique: true
+        password required: true, nullable: false, blank: false, password: true
+        username required: true, nullable: false, blank: false, unique: true
     }
 
     static mapping = {
 	    password column: '`password`'
-    }
-
-    def beforeValidate() {
-        PasswordEncoder passwordEncoder = new BCryptPasswordEncoder()
-        String hashedPassword = passwordEncoder.encode(this.password)
-        this.password = hashedPassword
     }
 }
