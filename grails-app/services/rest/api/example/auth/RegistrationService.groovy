@@ -22,7 +22,6 @@ class RegistrationService {
 
         } else {
             Role role = Role.findByAuthority("ROLE_USER")
-            user = User.findByUsername(username)
 
             UserRole userRole = new UserRole()
             userRole.user = user
@@ -32,10 +31,9 @@ class RegistrationService {
                 log.error("Could not assign $role.authority to $user.username. Reason: $user.errors")
                 return user
             }
-
-            log.info("Successfully created user: $user.username.")
         }
 
+        log.info("Successfully created user: $user.username.")
         return user
     }
 }
